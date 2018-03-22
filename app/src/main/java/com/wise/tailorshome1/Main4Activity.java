@@ -1,4 +1,4 @@
-package com.wise.tailorshome;
+package com.wise.tailorshome1;
 
 
 import android.app.ProgressDialog;
@@ -26,6 +26,7 @@ public class Main4Activity extends AppCompatActivity {
     EditText pename, pepno, peemail, peaddress, pepin, petime, pedate;
     Button pbplaceorder;
     long now = System.currentTimeMillis() - 1000;
+    Context context = this;
 
     private ProgressDialog dialog; // this = YourActivity
 
@@ -54,7 +55,7 @@ public class Main4Activity extends AppCompatActivity {
 
         pename = findViewById(R.id.ename);
         pepno = findViewById(R.id.epno);
-        peemail = findViewById(R.id.eemail);
+        /*peemail = findViewById(R.id.eemail);*/
         peaddress = findViewById(R.id.eaddress);
         pepin = findViewById(R.id.epin);
 
@@ -87,10 +88,10 @@ public class Main4Activity extends AppCompatActivity {
                         } else if (pepno.getText().toString().trim().length() != 10) {
                             pepno.setError("ADD VALID PHONE NUMBER");
                             Toast.makeText(getApplicationContext(), "INVALID PHONE NUMBER", Toast.LENGTH_SHORT).show();
-                        } else if (peemail.getText().toString().trim().length() == 0 || (!peemail.getText().toString().trim().matches(emailPattern))) {
+                        } /*else if (peemail.getText().toString().trim().length() == 0 || (!peemail.getText().toString().trim().matches(emailPattern))) {
                             peemail.setError("ADD  VALID EMAIL");
                             Toast.makeText(getApplicationContext(), "INVALID EMAIL ADDRESS", Toast.LENGTH_SHORT).show();
-                        } else if (peaddress.getText().toString().trim().length() == 0) {
+                        }*/ else if (peaddress.getText().toString().trim().length() == 0) {
                             peaddress.setError("ADD ADDRESS");
                             Toast.makeText(getApplicationContext(), "ENTER ADDRESS", Toast.LENGTH_SHORT).show();
                         } else if (pepin.getText().toString().trim().length() != 6) {
@@ -120,10 +121,10 @@ public class Main4Activity extends AppCompatActivity {
 
                                 }
                             }).start();
-                            String NAME, PHONE_NO, EMAIL, ADDRESS, PINCODE, PICKUPTIME, PICKUPDATE;
+                            String NAME, PHONE_NO, ADDRESS, PINCODE, PICKUPTIME, PICKUPDATE;
                             NAME = pename.getText().toString();
                             PHONE_NO = pepno.getText().toString();
-                            EMAIL = peemail.getText().toString();
+                            String EMAIL = ((Global) context.getApplicationContext()).getemail();
                             ADDRESS = peaddress.getText().toString();
                             PINCODE = pepin.getText().toString();
                             PICKUPDATE = "" + pedate.getYear() + "/" + pedate.getMonth() + "/" + pedate.getDayOfMonth();

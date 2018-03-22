@@ -1,4 +1,4 @@
-package com.wise.tailorshome;
+package com.wise.tailorshome1;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

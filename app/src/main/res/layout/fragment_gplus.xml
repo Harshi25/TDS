@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wise.tailorshome.MainActivity">
+    tools:context="com.wise.tailorshome1.MainActivity">
 
     <LinearLayout
         android:id="@+id/prof_section"

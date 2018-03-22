@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wise.tailorshome.MainActivity">
+    tools:context="com.wise.tailorshome1.MainActivity">
 
     <LinearLayout
         android:id="@+id/prof_section"
@@ -15,15 +15,16 @@
         <ImageView
             android:id="@+id/g_image"
             android:layout_width="110dp"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="60dp"
-            android:src="@drawable/s" />
+            android:layout_marginTop="50dp"
+
+            android:src="@drawable/prof" />
 
         <LinearLayout
             android:id="@+id/g_details"
             android:layout_width="242dp"
-            android:layout_height="148dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:orientation="vertical">
 
@@ -33,10 +34,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:text="TextView"
                 android:textAlignment="viewStart"
                 android:textAllCaps="true"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -45,23 +47,55 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
 
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:text="EMAIL"
                 android:textAlignment="viewStart"
-                android:textAllCaps="true"
+                android:textAllCaps="false"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:text="LOGOUT FROM GOOGLE ACCOUNT" />
+                android:background="#4A148C"
+                android:fontFamily="monospace"
+                android:text="LOGOUT"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#4A148C"
+                android:fontFamily="monospace"
+                android:onClick="submitOrder"
+                android:text="CLICK HERE TO CONTINUE"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/t_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:alpha="0.8"
+        android:src="@drawable/diytailoring" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/signin"
@@ -72,4 +106,5 @@
         android:layout_marginTop="30dp">
 
     </com.google.android.gms.common.SignInButton>
+
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.wise.tailorshome;
+package com.wise.tailorshome1;
 
 public class UserDetailsTable {
     String NAME, PHONE_NO, EMAIL, ADDRESS, PINCODE, PICKUPDATE, PICKUPTIME;

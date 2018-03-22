@@ -1,4 +1,4 @@
-package com.wise.tailorshome;
+package com.wise.tailorshome1;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Main3Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
 
 
     public static boolean isNetworkStatusAvialable(Context context) {
@@ -25,27 +25,43 @@ public class Main3Activity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(new Intent(Main3Activity.this, Main2Activity.class));
-        finish();
-
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (!isNetworkStatusAvialable(getApplicationContext())) {
             Toast.makeText(getApplicationContext(), "Please check your Internet Connection", Toast.LENGTH_SHORT).show();
-            setContentView(R.layout.activity_main3);
-        } else {
-            setContentView(R.layout.activity_main3);
 
+        } else {
+            setContentView(R.layout.activity_main2);
+
+            //googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this,getApplicationContext()).addApi(Auth.GOOGLE_SIGN_IN_API, signInOptions).build();
         }
+
     }
 
-    public void perDetails(View view) {
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
+
+    public void selectClothing(View view) {
         Button button = (Button) view;
         startActivity(new Intent(getApplicationContext(), Main4Activity.class));
+    }
+
+    public void menu(View view) {
+        Button button = (Button) view;
+        startActivity(new Intent(getApplicationContext(), Main7Activity.class));
+    }
+
+    public void signout1(View v) {
+        Button button = (Button) v;
+
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
     }
 }
