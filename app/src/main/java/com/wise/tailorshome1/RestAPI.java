@@ -21,7 +21,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class RestAPI {
-    private final String urlString = "https://wiseteam.azurewebsites.net";
+    private final String urlString = "http://tailorshome.azurewebsites.net/Handler1.ashx";
 
     private static String convertStreamToUTF8String(InputStream stream) throws IOException {
         String result = "";

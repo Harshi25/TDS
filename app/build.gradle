@@ -1,14 +1,24 @@
 apply plugin: 'com.android.application'
 
 
+
+
 android {
+    signingConfigs {
+        config {
+            keyAlias 'android'
+            keyPassword 'android'
+            storeFile file('E:/Desktop/release/app-release.apk')
+            storePassword 'android'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId 'com.wise.tailorshome1'
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 3
-        versionName "2.1.1"
+        versionCode 6
+        versionName "2.2.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

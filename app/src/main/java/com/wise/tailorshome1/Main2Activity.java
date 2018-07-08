@@ -58,10 +58,5 @@ public class Main2Activity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), Main7Activity.class));
     }
 
-    public void signout1(View v) {
-        Button button = (Button) v;
 
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-
-    }
 }
