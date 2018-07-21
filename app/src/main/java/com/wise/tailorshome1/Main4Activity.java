@@ -19,10 +19,9 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-
 public class Main4Activity extends AppCompatActivity {
 
-
+    static String EMAIL;
     EditText pename, pepno, peemail, peaddress, pepin, petime, pedate;
     Button pbplaceorder;
     long now = System.currentTimeMillis() - 1000;
@@ -75,6 +74,8 @@ public class Main4Activity extends AppCompatActivity {
 
         pbplaceorder = findViewById(R.id.bplaceorder);
         final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]{2,3}";
+        final String code1 = "500[0-9]*";
+        final String code2 = "501[0-9]*";
 
 
         pbplaceorder.setOnClickListener(
@@ -94,7 +95,7 @@ public class Main4Activity extends AppCompatActivity {
                         }*/ else if (peaddress.getText().toString().trim().length() == 0) {
                             peaddress.setError("ADD ADDRESS");
                             Toast.makeText(getApplicationContext(), "ENTER ADDRESS", Toast.LENGTH_SHORT).show();
-                        } else if (pepin.getText().toString().trim().length() != 6) {
+                        } else if (pepin.getText().toString().trim().length() != 6 || (!pepin.getText().toString().trim().matches(code1) && !pepin.getText().toString().trim().matches(code2))) {
                             pepin.setError("ADD VALID PINCODE");
                             Toast.makeText(getApplicationContext(), "INALID PINCODE", Toast.LENGTH_SHORT).show();
                         } else if (petime.getCurrentHour() < 10 || petime.getCurrentHour() > 19) {
@@ -124,7 +125,7 @@ public class Main4Activity extends AppCompatActivity {
                             String NAME, PHONE_NO, ADDRESS, PINCODE, PICKUPTIME, PICKUPDATE;
                             NAME = pename.getText().toString();
                             PHONE_NO = pepno.getText().toString();
-                            String EMAIL = ((Global) context.getApplicationContext()).getemail();
+                            EMAIL = ((Global) context.getApplicationContext()).getemail();
                             ADDRESS = peaddress.getText().toString();
                             PINCODE = pepin.getText().toString();
                             PICKUPDATE = "" + pedate.getYear() + "/" + pedate.getMonth() + "/" + pedate.getDayOfMonth();

@@ -58,5 +58,10 @@ public class Main2Activity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), Main7Activity.class));
     }
 
+    public void your_orders(View v) {
+        Button button = (Button) v;
+        startActivity(new Intent(getApplicationContext(), orders.class));
+
+    }
 
 }
